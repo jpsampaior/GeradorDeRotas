@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Gerador de Rotas</title>
     <link rel="stylesheet" href="style.css">
-    <script src="map.js"></script>
+    
 </head>
 <body>
     <h1 id="title">Gerador de Rotas</h1>
@@ -24,7 +24,7 @@
                 <input type="text"id="ipDepartureAdress"><br/>
                 <label for="destinationAdress">Endereço do Destino:</label><br/>
                 <input type="text"id="ipDestinationAdress"><br/>
-                <input type="submit" value="Traçar Rota">
+                <input type="submit" id="btnGenerateRoutes" value="Traçar Rota">
             </form>
 
             <div id ="routesBox">
@@ -40,5 +40,6 @@
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMekkkZ9oy-zoKC5WUQq6ws2d6pQV9Yk4&callback=initMap">
     </script>
+    <script src="map.js"></script>
 </body>
 </html>
