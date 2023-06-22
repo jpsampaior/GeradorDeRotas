@@ -1,3 +1,28 @@
+var departureAddress;
+var destinationAddress;
+
+const btnGenerateRoutes = document.querySelector("#btnGenerateRoutes");
+
+class Address {
+    constructor(textAddress,latitude,longitude) {
+        this.textAddress = textAddress;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    getTextAddress() {
+        return this.textAddress;
+    }
+
+    getLatitude() {
+        return this.latitude;
+    }
+
+    getLongitude() {
+        return this.longitude;
+    }
+}
+
 function initMap() {
     var options = {
         zoom:2,
@@ -7,20 +32,6 @@ function initMap() {
     var map = new
     google.maps.Map(document.getElementById('map'), options);
 }
-
-const btnGenerateRoutes = document.querySelector("#btnGenerateRoutes");
-
-btnGenerateRoutes.addEventListener("click",function(e) {
-    e.preventDefault();
-
-    const ipDepartureAdress = document.querySelector("#ipDepartureAdress");
-    var departureAdress = ipDepartureAdress.value;
-
-    generateCoordinates(departureAdress);
-
-    console.log(departureAdress);
-});
-
 
 function generateCoordinates(inputAddress) {
   const address = inputAddress;
@@ -35,9 +46,20 @@ function generateCoordinates(inputAddress) {
       const longitude = data.results[0].geometry.location.lng;
       console.log(`Latitude: ${latitude}`);
       console.log(`Longitude: ${longitude}`);
+
+      return new Address(address,latitude,longitude);
     }
   })
   .catch(error => {
     console.error("Ocorreu um erro ao obter as coordenadas:", error);
   });
+
+  
 }
+
+btnGenerateRoutes.addEventListener("click",function(e) {
+    e.preventDefault();
+
+    departureAddress = generateCoordinates(document.querySelector("#ipDepartureAdress").value);
+    destinationAddress = generateCoordinates(document.querySelector("#ipDestinationAdress").value);
+});
