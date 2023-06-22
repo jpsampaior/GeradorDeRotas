@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Rotas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="map.js"></script>
+</head>
+<body>
+    <h1 id="title">Gerador de Rotas</h1>
+
+    <div class="contentBox">
+        <div class="sectionBox">
+            <h2>Mapa</h2>
+
+            <div id="map"></div>
+        </div>
+        
+        <div class="sectionBox">
+            <h2>Endereços</h2>
+
+            <form>
+                <label for="departureAdress">Endereço de Partida:</label><br/>
+                <input type="text"id="ipDepartureAdress"><br/>
+                <label for="destinationAdress">Endereço do Destino:</label><br/>
+                <input type="text"id="ipDestinationAdress"><br/>
+                <input type="submit" value="Traçar Rota">
+            </form>
+
+            <div id ="routesBox">
+                <h2>Rotas</h2>
+            </div>
+        </div>
+
+        
+        
+    </div>
+
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMekkkZ9oy-zoKC5WUQq6ws2d6pQV9Yk4&callback=initMap">
+    </script>
+</body>
+</html>

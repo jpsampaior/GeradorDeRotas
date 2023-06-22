@@ -1,0 +1,32 @@
+form {
+    align-items: center;
+}
+
+.contentBox {
+    background-color: aquamarine;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.sectionBox {
+    background-color: bisque;
+    flex: 1;
+    margin:10px;
+    text-align: center;
+}
+
+#title {
+    text-align: center;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+
+
+#routesBox {
+       
+}
