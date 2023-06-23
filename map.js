@@ -1,12 +1,16 @@
 const ipDepartureAddress = document.querySelector("#ipDepartureAdress");
 const ipDestinationAddress = document.querySelector("#ipDestinationAdress");
 const btnGenerateRoutes = document.querySelector("#btnGenerateRoute");
+const btnDownloadInstructions = document.querySelector("#btnDownloadInstructions");
 
 var departureAddress;
 var destinationAddress;
 
 var directionsService;
 var directionsRenderer;
+
+var csvString;
+var instructionsItens;
 
 
 class Address {
@@ -98,14 +102,20 @@ async function obterTrajeto(departureAddress,destinationAddress) {
         const steps = result.routes[0].legs[0].steps;
         const instructions = document.getElementById("instructions");
 
+        csvString = "";
+
         for (let i = 0; i < steps.length; i++) {
           const step = steps[i];
           const instruction = document.createElement("li");
           instruction.innerHTML = step.instructions;
           instructions.appendChild(instruction);
+
+          csvString += instruction.innerText + "\n";
         }
       }
     });
+
+
   } catch (error) {
     console.error("Ocorreu um erro:", error);
   }
@@ -134,3 +144,17 @@ btnGenerateRoutes.addEventListener("click",function(e) {
   }
 });
 
+btnDownloadInstructions.addEventListener("click", function(e) {
+  var link = document.createElement("a");
+  var csvData = "\ufeff" + csvString;
+
+  var encodedUri = "data:text/csv;charset=utf-8," + encodeURIComponent(csvData);
+
+  link.href = encodedUri;
+  link.download = "Instruções.csv";
+  link.style.display = "none";
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
