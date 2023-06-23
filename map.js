@@ -101,6 +101,10 @@ async function obterTrajeto(departureAddress,destinationAddress) {
 
         const steps = result.routes[0].legs[0].steps;
         const instructions = document.getElementById("instructions");
+        
+        while (instructions.firstChild) {
+          instructions.removeChild(instructions.firstChild);
+        }
 
         csvString = "";
 
