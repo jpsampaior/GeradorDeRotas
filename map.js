@@ -2,6 +2,7 @@ const ipDepartureAddress = document.querySelector("#ipDepartureAdress");
 const ipDestinationAddress = document.querySelector("#ipDestinationAdress");
 const btnGenerateRoutes = document.querySelector("#btnGenerateRoute");
 const btnDownloadInstructions = document.querySelector("#btnDownloadInstructions");
+const instructionsBox = document.querySelector("#instructionsBox");
 
 var departureAddress;
 var destinationAddress;
@@ -119,7 +120,7 @@ async function obterTrajeto(departureAddress,destinationAddress) {
       }
     });
 
-
+    instructionsBox.style.display = "flex";
   } catch (error) {
     console.error("Ocorreu um erro:", error);
   }
