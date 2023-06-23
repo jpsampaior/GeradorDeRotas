@@ -19,10 +19,13 @@
 #contentBox {
     margin-left: 0%;
     margin-right: 0%;
+    text-align: center;
+    justify-content: center;
 }
 
 #instructionsBox {
     margin-left: 0%;
     margin-right: 0%;
+    justify-content: center;
     display: none;
 }
