@@ -15,7 +15,6 @@ var distance;
 var csvString;
 var instructionsItens;
 
-
 class Address {
   constructor(textAddress,latitude,longitude) {
     this.textAddress = textAddress;
@@ -33,14 +32,6 @@ class Address {
 
   getLongitude() {
       return this.longitude;
-  }
-}
-
-class Request {
-  constructor(departurePoint,destinationPoint) {
-    this.origin = departurePoint;
-    this.destination = destinationPoint;
-    this.travelMode = google.maps.TravelMode.DRIVING;
   }
 }
 
