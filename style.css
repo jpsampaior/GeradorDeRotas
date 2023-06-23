@@ -2,7 +2,24 @@
     height: 500px;
 }
 
+#addressCard {
+    height: 100%;
+}
+
+#body {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    
+}
+
 #contentBox {
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+#instructionsBox {
     margin-left: 0%;
     margin-right: 0%;
 }
