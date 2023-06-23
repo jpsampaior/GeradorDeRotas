@@ -9,7 +9,9 @@ var destinationAddress;
 
 var directionsService;
 var directionsRenderer;
+var distanceMatrixService;
 
+var distance;
 var csvString;
 var instructionsItens;
 
@@ -55,6 +57,7 @@ function initMap() {
   directionsRenderer = new google.maps.DirectionsRenderer({
     map: map,
   });
+  distanceMatrixService = new google.maps.DistanceMatrixService();
 }
 
 async function generateCoordinates(inputAddress) {
@@ -90,10 +93,11 @@ async function obterTrajeto(departureAddress,destinationAddress) {
     const startPoint = new google.maps.LatLng(departureObj.latitude, departureObj.longitude);
     const endPoint = new google.maps.LatLng(destinationObj.latitude, destinationObj.longitude);
 
-    const request = {
+    var request = {
       origin: startPoint,
       destination: endPoint,
       travelMode: google.maps.TravelMode.DRIVING,
+      unitSystem: google.maps.UnitSystem.METRIC,
     };
 
     directionsService.route(request, function (result, status) {
@@ -117,6 +121,20 @@ async function obterTrajeto(departureAddress,destinationAddress) {
 
           csvString += instruction.innerText + "\n";
         }
+      }
+    });
+
+    request = {
+      origins: [startPoint],
+      destinations: [endPoint],
+      travelMode: google.maps.TravelMode.DRIVING,
+      unitSystem: google.maps.UnitSystem.METRIC,
+    };
+
+    distanceMatrixService.getDistanceMatrix(request, function(result, status) {
+      if (status === "OK") {
+        distance = result.rows[0].elements[0].distance.text;
+        console.log("Distância: " + distance);
       }
     });
 
