@@ -1,15 +1,12 @@
-var ipDepartureAddress;
-var ipDestinationAddress;
+const ipDepartureAddress = document.querySelector("#ipDepartureAdress");
+const ipDestinationAddress = document.querySelector("#ipDestinationAdress");
+const btnGenerateRoutes = document.querySelector("#btnGenerateRoute");
 
 var departureAddress;
 var destinationAddress;
 
 var directionsService;
 var directionsRenderer;
-
-
-
-const btnGenerateRoutes = document.querySelector("#btnGenerateRoute");
 
 
 class Address {
@@ -110,17 +107,15 @@ async function obterTrajeto(departureAddress,destinationAddress) {
       }
     });
   } catch (error) {
-    btnGenerateRoutes.classList.add("is-invalid");
     console.error("Ocorreu um erro:", error);
   }
 }
 
 btnGenerateRoutes.addEventListener("click",function(e) {
-  ipDepartureAddress = document.querySelector("#ipDepartureAdress");
-  ipDestinationAddress = document.querySelector("#ipDestinationAdress");
-
   departureAddress = ipDepartureAddress.value;
   destinationAddress = ipDestinationAddress.value;
+
+  
 
   if(departureAddress == "") {
     ipDepartureAddress.classList.add("is-invalid");
