@@ -21,11 +21,20 @@
     margin-right: 0%;
     text-align: center;
     justify-content: center;
+    max-height: 578px;
 }
 
 #instructionsBox {
     margin-left: 0%;
     margin-right: 0%;
     justify-content: center;
-    display: none;
+    display: flex;
+}
+
+#routeInfoBox {
+    align-items: center;
+}
+
+#a {
+    height: 100%;
 }
