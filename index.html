@@ -16,9 +16,9 @@
 <body>
     <h1 id="title">Gerador de Rotas</h1>
 
-    <div id="contentBox" class="row text-center my-4 justify-content-center customRow">
+    <div id="contentBox" class="row text-center my-4 justify-content-center">
         <div class="col-sm-4">
-            <div id="addressCard" class="card">
+            <div class="card my-2">
                 <div id="body"class="card-body">
                     <div>
                         <h5 class="card-title">Endereços</h5>
@@ -43,6 +43,17 @@
                         <a href="#" class="btn btn-primary" id="btnGenerateRoute">Calcular rota</a>
                     </div>
                     
+                </div>
+            </div>
+
+            <div id ="routeInfoBox" class="card">
+                <div class="card-body">
+                    <div>
+                        <h5 class="card-title">Informações do Trajeto</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Distância e Tempo</h6>
+                        <label><strong>Distância do trajeto: </strong><span id="routeDistance"></span></label><br/>
+                        <label><strong>Tempo até o destino: </strong><span id="routeDuration"></span></label>
+                    </div>
                 </div>
             </div>
         </div>

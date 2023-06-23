@@ -3,6 +3,8 @@ const ipDestinationAddress = document.querySelector("#ipDestinationAdress");
 const btnGenerateRoutes = document.querySelector("#btnGenerateRoute");
 const btnDownloadInstructions = document.querySelector("#btnDownloadInstructions");
 const instructionsBox = document.querySelector("#instructionsBox");
+const lbDistance = document.querySelector("#routeDistance");
+const lbDuration = document.querySelector("#routeDuration");
 
 var departureAddress;
 var destinationAddress;
@@ -12,6 +14,7 @@ var directionsRenderer;
 var distanceMatrixService;
 
 var distance;
+var duration;
 var csvString;
 var instructionsItens;
 
@@ -125,7 +128,13 @@ async function obterTrajeto(departureAddress,destinationAddress) {
     distanceMatrixService.getDistanceMatrix(request, function(result, status) {
       if (status === "OK") {
         distance = result.rows[0].elements[0].distance.text;
+        duration = result.rows[0].elements[0].duration.text;
+
+        lbDistance.innerHTML=distance;
+        lbDuration.innerHTML=duration;
+
         console.log("Distância: " + distance);
+        console.log("Duração: " + duration);
       }
     });
 

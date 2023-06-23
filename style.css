@@ -9,10 +9,6 @@
     height: 500px;
 }
 
-#addressCard {
-    height: 100%;
-}
-
 #body {
     display: flex;
     height: fit-content;
