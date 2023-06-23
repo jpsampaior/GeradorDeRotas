@@ -12,42 +12,51 @@
 <body>
     <h1 id="title">Gerador de Rotas</h1>
 
-    <div class="row text-center">
+    <div id = "contentBox" class="row text-center my-4 justify-content-center">
         <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Endereços</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Partia e Destino</h6>
-              <p class="card-text">Digite aqui o endereço de partida e de destino</p>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Endereços</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Partia e Destino</h6>
+                    <p class="card-text">Digite aqui o endereço de partida e de destino</p>
 
-              <div class="form-group">
-                <label for="inputAddress">Endereço de Partida</label>
-                <input type="text" class="form-control" id="departureAddress" placeholder="Avenida Partida 1500">
-                <div class="invalid-feedback">
-                    Por favor insira um endereço.
+                    <div class="form-group">
+                        <label for="inputAddress">Endereço de Partida</label>
+                        <input type="text" class="form-control" id="ipDepartureAdress" placeholder="Avenida Partida 1500">
+                        <div class="invalid-feedback">
+                            Por favor insira um endereço.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputAddress">Endereço do Destino</label>
+                        <input type="text" class="form-control" id="ipDestinationAdress" placeholder="Rua Chegada 75">
+                        <div class="invalid-feedback">
+                            Por favor insira um endereço.
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn btn-primary" id="btnGenerateRoute">Calcular rota</a>
                 </div>
-              </div>
-
-              <div class="form-group">
-                <label for="inputAddress">Endereço do Destino</label>
-                <input type="text" class="form-control" id="idestinationAddress" placeholder="Rua Chegada 75">
-                <div class="invalid-feedback">
-                    Por favor insira um endereço.
-                </div>
-              </div>
-
-              <a href="#" class="btn btn-primary">Calcular rota</a>
             </div>
-          </div>
         </div>
 
-        <div class="col-sm-8">
+        <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Mapa</h5>
                 <div id="map"></div>
               </div>
             </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Instruções</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Siga os passos para chegar ao destino</h6>
+            <ol id="instructions"></ol>
+            
         </div>
     </div>
 

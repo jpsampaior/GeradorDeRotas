@@ -1,4 +1,8 @@
 #map {
-    height: 400px;
-    width: 100%;
+    height: 500px;
+}
+
+#contentBox {
+    margin-left: 0%;
+    margin-right: 0%;
 }
