@@ -1,19 +1,13 @@
+.displayChange {
+    display:none;
+}
+
+
 #title {
     font-family: 'Ysabeau Office', sans-serif;
     color:dodgerblue;
     text-align: center;
     margin: 3rem;
-}
-
-#map {
-    height: 500px;
-}
-
-#body {
-    display: flex;
-    height: fit-content;
-    align-items: center;
-    justify-content: center;
 }
 
 #contentBox {
@@ -24,17 +18,27 @@
     max-height: 578px;
 }
 
+#map {
+    height: 500px;
+}
+
+#formCardBody {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+
 #instructionsBox {
     margin-left: 0%;
     margin-right: 0%;
-    justify-content: center;
-    display: flex;
+    justify-content: center
 }
 
-#routeInfoBox {
-    align-items: center;
+#routeInfoSection {
+    margin-top: 2rem;
 }
 
-#a {
+#formBox {
     height: 100%;
 }

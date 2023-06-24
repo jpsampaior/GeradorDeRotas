@@ -17,10 +17,9 @@
     <h1 id="title">Gerador de Rotas</h1>
 
     <div id="contentBox" class="row my-4">
-
         <div class="col-sm-4">
-            <div id = "a" class="card">
-                <div id="body"class="card-body">
+            <div id = "formBox" class="card">
+                <div id="formCardBody"class="card-body">
                     <div>
                         <h5 class="card-title">Endereços</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Digite aqui o endereço de partida e destino</h6>
@@ -40,10 +39,17 @@
                                 Por favor insira um endereço válido.
                             </div>
                         </div>
+                        
 
                         <a href="#" class="btn btn-primary" id="btnGenerateRoute">Calcular rota</a>
+                        
+                        <div id="routeInfoSection" class="d-none">
+                            <h5 class="card-title">Informações do Trajeto</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Distância e Tempo</h6>
+                            <label><strong>Distância do trajeto: </strong><span id="routeDistance"></span></label><br/>
+                            <label><strong>Tempo até o destino: </strong><span id="routeDuration"></span></label>
+                        </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -58,28 +64,13 @@
         </div>
     </div>
 
-    <div id="instructionsBox" class ="row">
-        <div class="col-sm-2">
-            <div id ="routeInfoBox" class="card">
-                <div class="card-body">
-                    <div>
-                        <h5 class="card-title">Informações do Trajeto</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Distância e Tempo</h6>
-                        <label><strong>Distância do trajeto: </strong><span id="routeDistance"></span></label><br/>
-                        <label><strong>Tempo até o destino: </strong><span id="routeDuration"></span></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-5">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Instruções</h5>
-                    <h6 class="card-subtitle mb-2 text-muted text-center">Siga os passos para chegar ao destino</h6>
-                    <ol id="instructions"></ol>
-                    <a href="#" class="btn btn-primary" id="btnDownloadInstructions">Baixar instruções</a>
-                </div>
+    <div id="instructionsBox" class ="row d-none">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">Instruções</h5>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Siga os passos para chegar ao destino</h6>
+                <ol id="instructions"></ol>
+                <a href="#" class="btn btn-primary" id="btnDownloadInstructions">Baixar instruções</a>
             </div>
         </div>
     </div>
