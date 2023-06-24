@@ -1,7 +1,8 @@
-.displayChange {
-    display:none;
+.box {
+    margin-left: 0%;
+    margin-right: 0%;
+    justify-content: center;
 }
-
 
 #title {
     font-family: 'Ysabeau Office', sans-serif;
@@ -10,29 +11,18 @@
     margin: 3rem;
 }
 
-#contentBox {
-    margin-left: 0%;
-    margin-right: 0%;
-    text-align: center;
-    justify-content: center;
-    max-height: 578px;
-}
-
 #map {
     height: 500px;
 }
 
-#formCardBody {
-    display: flex;
-    height: fit-content;
-    align-items: center;
-    justify-content: center;
+#contentBox {
+    text-align: center;
 }
 
-#instructionsBox {
-    margin-left: 0%;
-    margin-right: 0%;
-    justify-content: center
+#formCardBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #routeInfoSection {
